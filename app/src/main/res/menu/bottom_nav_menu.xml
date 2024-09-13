@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_listAttraction"
+        android:icon="@drawable/ic_baseline_sensation_24"
+        android:title="@string/title_attractions" />
+
+    <item
+        android:id="@+id/navigation_listPerson"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/title_persons" />
+
+    <item
+        android:id="@+id/navigation_listPark"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_parks" />
+
+</menu>

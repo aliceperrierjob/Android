@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="fr.uha.perrier.attraction.ui.attraction.AttractionViewModel" />
+        <variable
+            name="takePicture"
+            type="android.view.View.OnClickListener" />
+        <import type="fr.uha.perrier.attraction.model.Category"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.attraction.AttractionFragment">
+
+        <EditText
+            android:id="@+id/user"
+            android:layout_width="389dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:text="@={vm.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/attractionpark"
+            android:layout_width="390dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:hint="@string/attractionpark"
+            android:inputType="textPersonName"
+            android:text="@={vm.attractionpark}"
+            app:layout_constraintBottom_toTopOf="@+id/sizemin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/sizemin"
+            android:layout_width="381dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:hint="@string/sizeMin"
+            android:inputType="textPersonName"
+            android:text="@={vm.sizeMin}"
+            app:layout_constraintBottom_toTopOf="@+id/place"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/attractionpark" />
+
+        <EditText
+            android:id="@+id/place"
+            android:layout_width="393dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:hint="@string/place"
+            android:inputType="textPersonName"
+            android:text="@={vm.place}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sizemin" />
+
+        <RadioGroup
+            android:id="@+id/gender"
+            android:layout_width="394dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/place">
+
+            <TextView
+                android:id="@+id/Catgory_label"
+                android:layout_width="99dp"
+                android:layout_height="54dp"
+                android:layout_weight="1"
+                android:text="@string/category" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="335dp"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:entries="@array/categories"
+                android:selectedItemPosition="@={vm.categoryPosition}" />
+
+        </RadioGroup>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="409dp"
+            android:layout_height="248dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="1dp"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_outline_add_24" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

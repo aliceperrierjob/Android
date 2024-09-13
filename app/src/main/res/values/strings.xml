@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Attraction</string>
+    <string name="title_home">Attraction</string>
+    <string name="title_persons">Personnes</string>
+    <string name="title_person">Personne</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="category">Category</string>
+    <string name="female">girl</string>
+    <string name="male">boy</string>
+    <string name="name">name</string>
+    <string name="attractionpark">attractionpark</string>
+    <string name="sizeMin">sizeMin</string>
+    <string name="place">place</string>
+    <string name="title_save">save</string>
+    <string name="title_populate">populate</string>
+    <string name="no_date">no date</string>
+    <string name="title_parks">Parcs</string>
+    <string name="title_attractions">Attractions</string>
+    <string name="composition">leader is  %1s and %2d members</string>
+    <string name="parkname">park name</string>
+    <string name="priceMin">price name</string>
+    <string name="startHour">start hour</string>
+    <string name="endHour">end hour</string>
+
+    <string name="firstname">First name</string>
+    <string name="lastname">Last name</string>
+    <string name="age">Age</string>
+    <string name="separation">-</string>
+
+
+    <string name="title_park">Parc</string>
+    <string name="change_startday">Change Start Day of the Team</string>
+    <plurals name="compositions">
+        <item quantity="zero">leader is  %1s and no member</item>
+        <item quantity="one">leader is  %1s and 1 member</item>
+        <item quantity="other">leader is  %1s and %2d members</item>
+    </plurals>
+    <string-array name="types">
+        <item>No</item>
+        <item>Attraction</item>
+        <item>Aquatique</item>
+        <item>Thème</item>
+        <item>Animalier</item>
+    </string-array>
+    <string-array name="categories">
+        <item>No</item>
+        <item>Sensation</item>
+        <item>Famille</item>
+    </string-array>
+</resources>

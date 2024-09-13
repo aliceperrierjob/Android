@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_listPerson">
+
+    <fragment
+        android:id="@+id/navigation_listPark"
+        android:name="fr.uha.perrier.attraction.ui.park.ListParkFragment"
+        android:label="Parc d'attraction"
+        tools:layout="@layout/fragment_list_park">
+        <action
+            android:id="@+id/action_navigation_list_to_park"
+            app:destination="@id/navigation_park" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_park"
+        android:name="fr.uha.perrier.attraction.ui.park.ParkFragment"
+        android:label="@string/title_park"
+        tools:layout="@layout/fragment_park" >
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_navigation_park_to_datePickerFragment"
+            app:destination="@id/datePickerFragment" />
+        <action
+            android:id="@+id/action_navigation_park_to_attractionPickerFragment"
+            app:destination="@id/attractionPickerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_listAttraction"
+        android:name="fr.uha.perrier.attraction.ui.attraction.ListAttractionFragment"
+        android:label="Attractions"
+        tools:layout="@layout/fragment_list_attraction">
+        <action
+            android:id="@+id/action_navigation_list_to_attraction"
+            app:destination="@id/navigation_attraction" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_attraction"
+        android:name="fr.uha.perrier.attraction.ui.attraction.AttractionFragment"
+        android:label="@string/title_home">
+        <argument
+            android:name="id"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_person"
+        android:name="fr.uha.perrier.attraction.ui.person.PersonFragment"
+        android:label="@string/title_person" >
+        <action
+            android:id="@+id/action_navigation_person_to_datePickerFragment"
+            app:destination="@id/datePickerFragment" />
+        <action
+            android:id="@+id/action_navigation_person_to_attractionPickerFragment"
+            app:destination="@id/attractionPickerFragment" />
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="fr.uha.perrier.attraction.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <dialog
+        android:id="@+id/datePickerFragment"
+        android:name="fr.uha.perrier.android.ui.picker.DatePickerFragment"
+        android:label="DatePickerFragment">
+        <argument
+            android:name="date"
+            app:argType="long" />
+        <argument
+            android:name="title"
+            app:argType="integer" />
+        <argument
+            android:name="requestKey"
+            app:argType="string" />
+    </dialog>
+    <dialog
+        android:id="@+id/attractionPickerFragment"
+        android:name="fr.uha.perrier.attraction.ui.PickerAttractionFragment"
+        android:label="PickerAttractionFragment">
+        <argument
+            android:name="requestKey"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/navigation_listPerson"
+        android:name="fr.uha.perrier.attraction.ui.person.ListPersonFragment"
+        android:label="Personnes">
+        <action
+            android:id="@+id/action_navigation_list_to_person"
+            app:destination="@id/navigation_person" />
+    </fragment>
+
+</navigation>
